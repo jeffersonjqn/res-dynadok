@@ -1,7 +1,7 @@
 {
   "name": "customer-service",
   "version": "1.0",
-  "description": "Teste prático para desenvolvedor pleno/sênior",
+  "description": "Teste prático para desenvolvedor",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",

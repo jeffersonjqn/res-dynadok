@@ -26,7 +26,7 @@ export class GetCustomerByIdUseCase {
 
     // e salva no cache pra proxima vez
     if (customer) {
-      await this.cacheService.salvar(cacheKey, customer, 60); // cache de 1 minuto
+      await this.cacheService.salvar(cacheKey, customer, 60); // TTL cache de 1 minuto
     }
 
     return customer;

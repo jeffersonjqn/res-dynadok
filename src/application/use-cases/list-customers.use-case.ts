@@ -7,6 +7,6 @@ export class ListCustomersUseCase {
   constructor(private customerRepository: CustomerRepository) {}
 
   async execute(): Promise<Customer[]> {
-    return this.customerRepository.findAll();
+    return this.customerRepository.buscarTodos();
   }
 }
