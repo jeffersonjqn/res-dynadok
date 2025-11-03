@@ -3,11 +3,29 @@
    ```bash
    docker-compose up --build
    ```
-   isso já levanta api, mongo, redis, rabbitmq e o worker consumidor.
+   isso já levanta a api, mongo, redis, rabbitmq e o worker consumidor.
 2. a api vai estar escutando em `http://localhost:3000/api`.
 
+### rodar local (sem docker)
+1. instale as dependências:
+   ```bash
+   npm install
+   ```
+2. gere os arquivos JavaScript (obrigatório, pois `dist/` não é versionado):
+   ```bash
+   npm run build
+   ```
+3. suba a API:
+   ```bash
+   npm run start
+   ```
+4. (opcional) execute o worker para consumir a fila:
+   ```bash
+   npm run consumer
+   ```
+
 ### endpoints do serviço
-| metodo | rota                  | descricao                              |
+| método | rota                  | descrição                              |
 | ------ | --------------------- | -------------------------------------- |
 | POST   | `/api/customers`      | cria novo cliente                      |
 | GET    | `/api/customers/:id`  | busca cliente por id (cache com redis) |
@@ -46,5 +64,5 @@
 - sobre mensageria: eu ainda não tenho experiência prática ou teórica com esse assunto. por isso implementei um fluxo simples seguindo a documentaçao oficial do rabbitmq para garantir que o requisito fosse cumprido.
 
 ### obs: testes
-- os testes unitarios sao simples, focados nos casos de uso usando jest com mocks pro repositorio, cache e mensageria.
+- os testes unitários são simples, focados nos casos de uso usando jest com mocks para repositório, cache e mensageria.
 
